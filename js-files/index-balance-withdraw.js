@@ -6,6 +6,13 @@
     const withdrawField =document.getElementById('withdraw-field');
     const withdrawfieldElementString = withdrawField.value;
     const withdrawfieldElement =parseFloat(withdrawfieldElementString);
+
+    /* validation for entering the numbers */
+    if(isNaN( withdrawfieldElement)){
+        alert('Please enter a valid number');
+        withdrawField.value ='';
+        return;
+    }
     
 
 
@@ -16,7 +23,7 @@
     const previousWithdrawAmount =parseFloat(previousWithdrawElementString);
     /* Step-4:Current total calculation */
     
-    withdrawField.value ='';
+    
 
     /* Step -5:accessing the balance and getting the innerText */
     const previousBalance = document.getElementById('previous-balance');
@@ -25,7 +32,8 @@
 
     /* validation of withdraw more than balance */
      if(withdrawfieldElement > previousBalanceAmount ){
-        alert('Your balance is insufficient')
+        alert('Your balance is  not sufficient');
+        withdrawField.value='';
         return ;
     }
     const currentTotalWithdraw = previousWithdrawAmount + withdrawfieldElement;
@@ -34,7 +42,7 @@
 
     currentBalanceTotal = previousBalanceAmount -withdrawfieldElement;
     previousBalance.innerText=currentBalanceTotal;
-    withdrawField.value='';
+    
     
    
 
