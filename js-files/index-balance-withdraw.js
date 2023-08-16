@@ -42,6 +42,7 @@
 
     currentBalanceTotal = previousBalanceAmount -withdrawfieldElement;
     previousBalance.innerText=currentBalanceTotal;
+    withdrawField.value ='';
     
     
    

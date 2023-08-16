@@ -11,6 +11,13 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
      const depositField = document.getElementById('deposit-field');
     const depositAmountString = depositField.value;
     const newDepositAmount =parseFloat(depositAmountString);
+    /* text validation */
+    if(isNaN(newDepositAmount)){
+        alert('Please enter a number');
+        depositField.value='';
+
+        return;
+    }
 
     const previousDeposit = document.getElementById('previous-deposit');
     const previousDepositElementString = previousDeposit.innerText;
